@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Livewire;
+namespace App\Livewire\Posts;
 
 use Livewire\Component;
 use App\Models\Post;
 
-class PostForm extends Component
+class Create extends Component
 {
     public string $title = '';
     public string $content = '';
@@ -32,9 +32,8 @@ class PostForm extends Component
 
     }
 
-
     public function render()
     {
-        return view('livewire.post-form');
+        return view('livewire.posts.create');
     }
 }

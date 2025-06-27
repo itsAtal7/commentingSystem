@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Livewire;
+namespace App\Livewire\Posts;
 
 use Livewire\Component;
 use App\Models\Post;
 
-class ShowPost extends Component
+class Show extends Component
 {
     public Post $post;
 
@@ -18,6 +18,13 @@ class ShowPost extends Component
 
     public function render()
     {
-        return view('livewire.show-post');
+        return view('livewire.posts.show');
+    }
+
+    public function deletePost()
+    {
+        $this->post->delete();
+
+        return redirect()->route('home')->with('message', 'Post deleted successfully.');
     }
 }

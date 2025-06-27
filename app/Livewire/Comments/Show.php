@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Livewire;
+namespace App\Livewire\Comments;
 
 use Livewire\Component;
 use App\Models\Post;
 
-class CommentsSection extends Component
+class Show extends Component
 {
     public Post $post;
     public $comments;
@@ -28,6 +28,6 @@ class CommentsSection extends Component
 
     public function render()
     {
-        return view('livewire.comments-section');
+        return view('livewire.comments.show');
     }
 }

@@ -40,6 +40,7 @@ class Create extends Component
 
         $this->content = '';
         $this->dispatch('comment-added');
+        $this->js("toastr.success('Comment created successfully.')");
     }
 
     public function render()

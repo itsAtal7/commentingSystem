@@ -12,7 +12,9 @@ class Delete extends Component
     public function confirmDelete()
     {
         $this->deleteWithChildren($this->comment);
+
         $this->dispatch('comment-deleted');
+        $this->js("toastr.success('Comment deleted successfully.')");
     }
 
     protected function deleteWithChildren(Comment $comment)

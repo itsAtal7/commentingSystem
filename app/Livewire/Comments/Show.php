@@ -10,7 +10,11 @@ class Show extends Component
     public Post $post;
     public $comments;
 
-    protected $listeners = ['comment-added' => 'refreshComments'];
+    protected $listeners = [
+        'comment-added' => 'refreshComments',
+        'comment-updated' => 'refreshComments',
+        'comment-deleted' => 'refreshComments',
+    ];
 
     public function mount(Post $post)
     {

@@ -85,16 +85,9 @@
         <p class="text-gray-500">No posts yet. Be the first to create one!</p>
     @endforelse
 
-    <div class="mt-6">
+    <div class="mt-6 flex justify-center">
         {{ $posts->links() }}
     </div>
 </div>
 
-@if (session('message'))
-<script>
-    window.addEventListener('DOMContentLoaded', () => {
-        toastr.success("{{ session('message') }}");
-    });
-</script>
-@endif
 

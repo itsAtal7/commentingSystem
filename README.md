@@ -16,3 +16,22 @@ Run commands
 
 - npm run dev
     to start the development server.
+
+- npm install
+
+
+Implemeted Livewire Components
+
+For Comments
+- Create
+- Show
+
+For Posts
+- Create
+- Show
+- Delete
+- Edit
+
+
+Command to delete empty comments
+php artisan schedule:run

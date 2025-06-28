@@ -25,6 +25,8 @@ Implemeted Livewire Components
 For Comments
 - Create
 - Show
+- Edit
+- Delete
 
 For Posts
 - Create

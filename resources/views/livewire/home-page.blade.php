@@ -85,8 +85,8 @@
         <p class="text-gray-500">No posts yet. Be the first to create one!</p>
     @endforelse
 
-    <div class="mt-6 flex justify-center">
-        {{ $posts->links() }}
+    <div class="mt-6 justify-center">
+        {{ $posts->links('components.layouts.pagination') }}
     </div>
 </div>
 

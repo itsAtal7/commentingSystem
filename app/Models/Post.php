@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\BaseModel;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Post extends BaseModel
 {
@@ -11,7 +12,7 @@ class Post extends BaseModel
         'content'
     ];
 
-    public function comments()
+    public function comments(): HasMany
     {
         return $this->hasMany(Comment::class)->whereNull('parent_comment_id');
     }

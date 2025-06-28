@@ -1,15 +1,8 @@
 <ul class="ml-4 space-y-4">
     @foreach ($children as $comment)
-        <li class="border p-2 rounded">
-            <div>{{ $comment->content }}</div>
-
-            @if ($comment->canReply())
-                @livewire('comments.create', ['parent' => $comment, 'post' => $comment->post], key('reply-'.$comment->id))
-            @endif
-
-            @if ($comment->childrenRecursive->count())
-                @include('livewire.partials.comment-children', ['children' => $comment->childrenRecursive])
-            @endif
-        </li>
+        @include('livewire.partials.comment-item', [
+            'comment' => $comment,
+            'key' => 'comment-' . $comment->id
+        ])
     @endforeach
 </ul>

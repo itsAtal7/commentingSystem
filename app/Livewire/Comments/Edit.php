@@ -47,6 +47,7 @@ class Edit extends Component
         $this->editing = false;
 
         $this->dispatch('comment-updated');
+        $this->js("toastr.success('Comment created successfully!')");
     }
 
     public function render()

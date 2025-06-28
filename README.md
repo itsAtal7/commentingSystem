@@ -31,3 +31,7 @@ For Posts
 - Show
 - Delete
 - Edit
+
+
+Command to delete empty comments
+php artisan schedule:run

@@ -4,12 +4,7 @@
         <h1 class="text-3xl font-bold flex items-center space-x-2">
             <span>{{ $post->title }}</span>
 
-            <button wire:click="deletePost"
-                    onclick="return confirm('Are you sure you want to delete this post?')"
-                    class="text-sm text-red-500 hover:underline ml-2"
-                    >
-                Delete
-            </button>
+            @livewire('posts.delete', ['post' => $post], key('post-delete-'.$post->id))
         </h1>
 
         <a href="{{ route('home') }}"

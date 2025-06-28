@@ -2,16 +2,22 @@
 
 namespace App\Livewire\Comments;
 
-use App\Models\Comment;
 use Livewire\Component;
+use App\Models\Comment;
 
 class Edit extends Component
 {
     public Comment $comment;
     public string $content = '';
+    public bool $editing = false;
 
     protected $rules = [
         'content' => 'required|min:10',
+    ];
+
+    protected $messages = [
+        'content.required' => 'The comment cannot be empty.',
+        'content.min' => 'The comment must be at least 10 characters.',
     ];
 
     public function mount(Comment $comment)
@@ -19,7 +25,18 @@ class Edit extends Component
         $this->content = $comment->content;
     }
 
-    public function update()
+    public function startEditing()
+    {
+        $this->editing = true;
+    }
+
+    public function cancelEditing()
+    {
+        $this->editing = false;
+        $this->content = $this->comment->content;
+    }
+
+    public function save()
     {
         $this->validate();
 
@@ -27,8 +44,9 @@ class Edit extends Component
             'content' => $this->content,
         ]);
 
-        $this->dispatch('comment-updated', id: $this->comment->id);
+        $this->editing = false;
 
+        $this->dispatch('comment-updated');
     }
 
     public function render()

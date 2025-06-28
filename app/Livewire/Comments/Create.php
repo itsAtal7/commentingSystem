@@ -16,15 +16,8 @@ class Create extends Component
         'content' => 'required|min:10'
     ];
 
-    protected $messages = [
-        'content.required' => 'The comment cannot be empty.',
-        'content.min' => 'The comment must be at least 10 characters.'
-    ];
-
     public function save()
     {
-        $this->validate();
-
         $depth = $this->parent ? $this->parent->depth + 1 : 1;
 
         if ($depth > 3) {

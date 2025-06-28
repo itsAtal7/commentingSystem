@@ -8,6 +8,9 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     @livewireStyles
+    <style>
+        [x-cloak] { display: none !important; }
+    </style>
 </head>
 <body class="bg-gray-100 text-gray-900">
 

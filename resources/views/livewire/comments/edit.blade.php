@@ -22,7 +22,7 @@
             </svg>
         </button>
 
-        <div x-show="open" @click.away="open = false" class="absolute right-0 mt-6 w-28 bg-white border rounded shadow z-10">
+        <div x-show="open" x-cloak @click.away="open = false" class="absolute right-0 mt-6 w-28 bg-white border rounded shadow z-10">
             <button wire:click="startEditing" class="block px-4 py-2 hover:bg-gray-100 text-left w-full">Edit</button>
             @livewire('comments.delete', ['comment' => $comment], key('delete-'.$comment->id))
         </div>
